@@ -1,9 +1,14 @@
 package usuario;
 
+import compra.Carrito;
+
+import java.util.ArrayList;
+
 public class Cliente extends Usuario {
 
     private String direccion;
     private int telefono;
+    private ArrayList<Carrito> carritos = new ArrayList<>();
 
     public Cliente(Long id, String nombre, String rol, String email, String fechaRegistro, String estadoCuenta) {
         super(id, nombre, rol, email, fechaRegistro, estadoCuenta);
@@ -32,4 +37,11 @@ public class Cliente extends Usuario {
         this.telefono = telefono;
     }
 
+    public ArrayList<Carrito> getCarritos() {
+        return carritos;
+    }
+
+    public void setCarritos(ArrayList<Carrito> carritos) {
+        this.carritos = carritos;
+    }
 }
