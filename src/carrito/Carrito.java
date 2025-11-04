@@ -1,8 +1,6 @@
-package compra;
+package carrito;
 
 import usuario.Cliente;
-
-import java.util.ArrayList;
 
 public class Carrito {
     private String id;

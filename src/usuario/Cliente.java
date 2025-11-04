@@ -1,6 +1,6 @@
 package usuario;
 
-import compra.Carrito;
+import carrito.Carrito;
 
 import java.util.ArrayList;
 
@@ -18,6 +18,13 @@ public class Cliente extends Usuario {
         super(id, nombre, rol, email, fechaRegistro, estadoCuenta);
         this.direccion = direccion;
         this.telefono = telefono;
+    }
+
+    public Cliente(Long id, String nombre, String rol, String email, String fechaRegistro, String estadoCuenta, String direccion, int telefono, ArrayList<Carrito> carritos) {
+        super(id, nombre, rol, email, fechaRegistro, estadoCuenta);
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.carritos = carritos;
     }
 
 

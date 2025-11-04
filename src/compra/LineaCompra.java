@@ -1,6 +1,6 @@
 package compra;
 
-public class LineaDeCompra {
+public class LineaCompra {
 private int cantidad;
 private int subtotal;
 private String direccionEntrega;

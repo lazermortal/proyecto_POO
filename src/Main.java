@@ -1,4 +1,4 @@
-import compra.Carrito;
+import carrito.Carrito;
 import usuario.Cliente;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
