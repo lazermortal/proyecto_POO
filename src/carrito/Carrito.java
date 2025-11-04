@@ -2,10 +2,13 @@ package carrito;
 
 import usuario.Cliente;
 
+import java.util.ArrayList;
+
 public class Carrito {
     private String id;
     private String fechaCreacion;
     private Cliente cliente;
+    private ArrayList<LineaCarrito> lineaCarritos = new ArrayList<>();
 
     public Carrito(String id, String fechaCreacion, Cliente cliente) {
         this.id = id;
@@ -35,6 +38,14 @@ public class Carrito {
 
     public void setClientes(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public ArrayList<LineaCarrito> getLineaCarritos() {
+        return lineaCarritos;
+    }
+
+    public void setLineaCarritos(ArrayList<LineaCarrito> lineaCarritos) {
+        this.lineaCarritos = lineaCarritos;
     }
 
 }

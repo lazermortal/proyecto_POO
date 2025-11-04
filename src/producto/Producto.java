@@ -17,15 +17,14 @@ public class Producto {
     private Categoria categoria;
     private ArrayList<DesarrolladorProducto> desarrolladorProductos;
 
-    public Producto(Long id, String nombre, String descripcion, int precio, int stock, String fechaLanzamiento, Categoria categoria, ArrayList<DesarrolladorProducto> desarrolladorProductos) {
+    public Producto(Long id, String nombre, String descripcion, int precio, int stock, String fechaLanzamiento) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
         this.fechaLanzamiento = fechaLanzamiento;
-        this.categoria = categoria;
-        this.desarrolladorProductos = desarrolladorProductos;
+
     }
 
     public Long getId() {
@@ -106,5 +105,21 @@ public class Producto {
 
     public void setDesarrolladorProductos(ArrayList<DesarrolladorProducto> desarrolladorProductos) {
         this.desarrolladorProductos = desarrolladorProductos;
+    }
+
+    public void agregarDesarrollador(DesarrolladorProducto desarrollador) {
+        if (!this.desarrolladorProductos.contains(desarrollador)) {
+            this.desarrolladorProductos.add(desarrollador);
+            desarrollador.agregarProducto(this);
+        }{
+            System.out.println("este desarrollador ya esta listado como creador del producto");
+        }
+    }
+
+    public void removerDesarrollador(DesarrolladorProducto desarrollador) {
+        if (this.desarrolladorProductos.contains(desarrollador)) {
+            this.desarrolladorProductos.remove(desarrollador);
+            desarrollador.removerProducto(this);
+        }
     }
 }
