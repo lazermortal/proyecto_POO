@@ -12,10 +12,10 @@ public class Producto {
     private int precio;
     private int stock;
     private String fechaLanzamiento;
-    private ArrayList<LineaCarrito> lineaCarritos;
-    private ArrayList<LineaCompra> lineaCompras;
+    private ArrayList<LineaCarrito> lineaCarritos = new ArrayList<>();
+    private ArrayList<LineaCompra> lineaCompras = new ArrayList<>();
     private Categoria categoria;
-    private ArrayList<DesarrolladorProducto> desarrolladorProductos;
+    private ArrayList<DesarrolladorProducto> desarrolladorProductos = new ArrayList<>();
 
     public Producto(Long id, String nombre, String descripcion, int precio, int stock, String fechaLanzamiento) {
         this.id = id;
@@ -111,7 +111,7 @@ public class Producto {
         if (!this.desarrolladorProductos.contains(desarrollador)) {
             this.desarrolladorProductos.add(desarrollador);
             desarrollador.agregarProducto(this);
-        }{
+        }else{
             System.out.println("este desarrollador ya esta listado como creador del producto");
         }
     }
@@ -119,7 +119,6 @@ public class Producto {
     public void removerDesarrollador(DesarrolladorProducto desarrollador) {
         if (this.desarrolladorProductos.contains(desarrollador)) {
             this.desarrolladorProductos.remove(desarrollador);
-            desarrollador.removerProducto(this);
         }
     }
 }

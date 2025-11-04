@@ -62,13 +62,5 @@ private Producto producto;
         return compra;
     }
 
-    public void agregarProducto(Producto producto,int cantidad) {
-        if(this.producto == null) {
-            this.producto = producto;
-        }else if(this.producto==producto) {
-            this.cantidad+=cantidad;
-        }{
-            System.out.println("ya hay un producto diferente al que se intenta agregar");
-        }
-    }
+
 }

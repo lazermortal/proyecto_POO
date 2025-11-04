@@ -1,6 +1,7 @@
 package usuario;
 
 import carrito.Carrito;
+import carrito.LineaCarrito;
 import compra.Compra;
 import compra.LineaCompra;
 import producto.Producto;
@@ -71,7 +72,7 @@ public class Cliente extends Usuario {
         }
         return null;
     }
-    public void añadirNuevoProductoCompra(Producto producto, int cantidad, String direccionEntrega,Compra compra) {
+    public void añadirNuevoProductoCarrito(Producto producto, int cantidad, String direccionEntrega,Compra compra) {
         compra.crearLineaCompra(producto,cantidad,direccionEntrega,compra);
     }
     public void crearCompra(String id, String fecha, Cliente cliente){
@@ -81,7 +82,7 @@ public class Cliente extends Usuario {
     public void agregarCompra(Compra compra){
         if(!this.compras.contains(compra)){
             compras.add(compra);
-        }{
+        }else{
             System.out.println("este cliente ya tiene esta compra agregada");
         }
     }
@@ -90,7 +91,13 @@ public class Cliente extends Usuario {
     }
 
 
-    public void agregarProductoCompra(Compra compra,LineaCompra lineaCompra, Producto producto,int cantidad) {
-        compra.agregarProductoCompra(lineaCompra,producto,cantidad);
+    public void agregarProductoCarrito(Carrito carrito, LineaCarrito lineaCarrito, Producto producto, int cantidad) {
+        carrito.agregarProductoCarrito(lineaCarrito,producto,cantidad);
+    }
+    public void aumentarCantidadProducto(Carrito carrito,LineaCarrito lineaCarrito,Producto producto, int cantidad) {
+        carrito.aumentarCantidadProducto(lineaCarrito,producto,cantidad);
+    }
+    public void eliminarProductoCarrito(Carrito carrito, LineaCarrito lineaCarrito) {
+    carrito.eliminarLineaCarrito(lineaCarrito);
     }
 }

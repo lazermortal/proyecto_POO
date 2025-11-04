@@ -61,7 +61,5 @@ public class Compra {
         LineaCompra lineaCompra = new LineaCompra(cantidad,direccionEntrega,compra,producto);
         lineaCompras.add(lineaCompra);
     }
-    public void agregarProductoCompra(LineaCompra lineaCompra,Producto producto,int cantidad) {
-        lineaCompra.agregarProducto(producto,cantidad);
-    }
+
 }

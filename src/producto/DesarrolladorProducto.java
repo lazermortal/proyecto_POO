@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class DesarrolladorProducto extends Usuario {
     private String especialidad;
-    private ArrayList<Producto> productos;
+    private ArrayList<Producto> productos = new ArrayList<>();
 
     public DesarrolladorProducto(Long id, String nombre, String rol, String email, String fechaRegistro, String estadoCuenta, String especialidad) {
         super(id, nombre, rol, email, fechaRegistro, estadoCuenta);
@@ -21,7 +21,15 @@ public class DesarrolladorProducto extends Usuario {
         this.especialidad = especialidad;
     }
 
-    public void crearProducto(Long id, String nombre, String descripcion, int precio, int stock, String fechaLanzamiento,Producto producto) {
+    public ArrayList<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(ArrayList<Producto> productos) {
+        this.productos = productos;
+    }
+
+    public void crearProducto(Long id, String nombre, String descripcion, int precio, int stock, String fechaLanzamiento) {
         Producto nuevoProducto = new Producto( id,  nombre,  descripcion,  precio,  stock, fechaLanzamiento);
 
         this.agregarProducto(nuevoProducto);
@@ -31,13 +39,17 @@ public class DesarrolladorProducto extends Usuario {
   public void agregarProducto(Producto producto) {
         if (!this.productos.contains(producto)) {
             productos.add(producto);
-        }{
+        }else{
           System.out.println("este desarrollador ya creo ese producto");
       }
 
   }
   public void removerProducto(Producto producto) {
-        productos.remove(producto);
+        if (this.productos.contains(producto)) {
+            this.productos.remove(producto);
+            producto.removerDesarrollador(this);
+
+        }
   }
 
 }

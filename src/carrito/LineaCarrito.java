@@ -7,14 +7,13 @@ import java.util.ArrayList;
 public class LineaCarrito {
     private int cantidad;
     private int subtotal;
-    private final Carrito carrito;
-    private Producto productos;
+    private Carrito carrito;
+    private Producto producto;
 
-    public LineaCarrito(int cantidad, int subtotal, Carrito carrito, Producto productos) {
+    public LineaCarrito(int cantidad, Carrito carrito, Producto productos) {
         this.cantidad = cantidad;
-        this.subtotal = subtotal;
         this.carrito = carrito;
-        this.productos = productos;
+        this.producto = productos;
     }
 
     public int getCantidad() {
@@ -36,12 +35,27 @@ public class LineaCarrito {
     public Carrito getCarrito() {
         return carrito;
     }
+    public void setCarrito(Carrito carrito) {
+        this.carrito=carrito;
+    }
 
     public Producto getProductos() {
-        return productos;
+        return producto;
     }
 
-    public void setProductos(Producto productos) {
-        this.productos = productos;
+    public void setProductos(Producto producto) {
+        this.producto = producto;
     }
+
+
+    public void aumentarProducto(Producto producto,int cantidad) {
+        if(this.producto == null) {
+            this.producto = producto;
+        }else if(this.producto==producto) {
+            this.cantidad+=cantidad;
+        }{
+            System.out.println("ya hay un producto diferente al que se intenta agregar");
+        }
+    }
+
 }

@@ -1,5 +1,6 @@
 package carrito;
 
+import producto.Producto;
 import usuario.Cliente;
 
 import java.util.ArrayList;
@@ -48,4 +49,15 @@ public class Carrito {
         this.lineaCarritos = lineaCarritos;
     }
 
+    public void agregarProductoCarrito(LineaCarrito lineaCarrito, Producto producto, int cantidad) {
+        LineaCarrito nuevaLineaCarrito = new LineaCarrito(cantidad,this,producto);
+    }
+    public void aumentarCantidadProducto(LineaCarrito lineaCarrito, Producto producto, int cantidad) {
+        lineaCarrito.aumentarProducto(producto,cantidad);
+    }
+    public void eliminarLineaCarrito(LineaCarrito lineaCarrito) {
+        lineaCarritos.remove(lineaCarrito);
+        lineaCarrito=null;
+        lineaCarrito.setCarrito(null);
+    }
 }
