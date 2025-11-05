@@ -108,12 +108,14 @@ public class Producto {
     }
 
     public void agregarDesarrollador(DesarrolladorProducto desarrollador) {
-        if (!this.desarrolladorProductos.contains(desarrollador)) {
-            this.desarrolladorProductos.add(desarrollador);
-            desarrollador.agregarProducto(this);
-        }else{
-            System.out.println("este desarrollador ya esta listado como creador del producto");
-        }
+
+            for(int i=0;i<desarrolladorProductos.size();i++) {
+                if (this.desarrolladorProductos.get(i).getNombre().equals(desarrollador.getNombre())) {
+                    System.out.println(desarrollador.getNombre() + " ya fue creado por este desarrollador");
+                    return;
+                }
+            }
+            desarrolladorProductos.add(desarrollador);
     }
 
     public void removerDesarrollador(DesarrolladorProducto desarrollador) {

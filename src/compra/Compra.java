@@ -1,9 +1,11 @@
 package compra;
 
+import carrito.Carrito;
 import carrito.LineaCarrito;
 import producto.Producto;
 import usuario.Cliente;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Compra {
@@ -15,10 +17,11 @@ public class Compra {
     private ArrayList<LineaCompra> lineaCompras = new  ArrayList<>();
 
 
-    public Compra(String id, String fecha) {
+    public Compra(String id,Cliente cliente) {
         this.id = id;
-        this.fecha = fecha;
+        this.fecha = LocalDate.now().toString();
         this.estado = estadoCompra.PENDIENTE;
+        this.cliente = cliente;
     }
 
     public String getId() {
@@ -57,9 +60,20 @@ public class Compra {
         return cliente;
     }
 
-    public void crearLineaCompra(Producto producto, int cantidad, String direccionEntrega,Compra compra) {
-        LineaCompra lineaCompra = new LineaCompra(cantidad,direccionEntrega,compra,producto);
-        lineaCompras.add(lineaCompra);
+    public ArrayList<LineaCompra> getLineaCompras() {
+        return lineaCompras;
+    }
+
+    public void setLineaCompras(ArrayList<LineaCompra> lineaCompras) {
+        this.lineaCompras = lineaCompras;
+    }
+
+    public void crearLineaCompra(String direccion, Carrito carrito) {
+        for(int i = 0; i <carrito.getLineaCarritos().size(); i++ ) {
+            LineaCompra lineaCompra = new LineaCompra(carrito.getLineaCarritos().get(i).getCantidad(), direccion,this,carrito.getLineaCarritos().get(i).getProductos());
+            this.total += (lineaCompra.getSubtotal());
+            this.lineaCompras.add(lineaCompra);
+        }
     }
 
 }

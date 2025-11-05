@@ -3,33 +3,33 @@ package carrito;
 import producto.Producto;
 import usuario.Cliente;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Carrito {
-    private String id;
-    private String fechaCreacion;
+    private Long id;
+    private LocalDate fechaCreacion=LocalDate.now();
     private Cliente cliente;
     private ArrayList<LineaCarrito> lineaCarritos = new ArrayList<>();
 
-    public Carrito(String id, String fechaCreacion, Cliente cliente) {
+    public Carrito(Long id,Cliente cliente) {
         this.id = id;
-        this.fechaCreacion = fechaCreacion;
         this.cliente = cliente;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getFechaCreacion() {
+    public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(String fechaCreacion) {
+    public void setFechaCreacion(LocalDate fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
@@ -49,8 +49,15 @@ public class Carrito {
         this.lineaCarritos = lineaCarritos;
     }
 
-    public void agregarProductoCarrito(LineaCarrito lineaCarrito, Producto producto, int cantidad) {
-        LineaCarrito nuevaLineaCarrito = new LineaCarrito(cantidad,this,producto);
+    public void agregarProductoCarrito(Producto producto, int cantidad) {
+        for(int i=0;i<lineaCarritos.size();i++) {
+            if (lineaCarritos.get(i).getProductos().getNombre().equalsIgnoreCase(producto.getNombre())) {
+                System.out.println("ya hay un producto con este nombre agregado al carrito");
+                return;
+            }
+        }
+        LineaCarrito nuevaLineaCarrito = new LineaCarrito(cantidad, this, producto);
+        this.lineaCarritos.add(nuevaLineaCarrito);
     }
     public void aumentarCantidadProducto(LineaCarrito lineaCarrito, Producto producto, int cantidad) {
         lineaCarrito.aumentarProducto(producto,cantidad);
@@ -58,6 +65,8 @@ public class Carrito {
     public void eliminarLineaCarrito(LineaCarrito lineaCarrito) {
         lineaCarritos.remove(lineaCarrito);
         lineaCarrito=null;
-        lineaCarrito.setCarrito(null);
+    }
+    public void vaciarCarrito() {
+        lineaCarritos.clear();
     }
 }
