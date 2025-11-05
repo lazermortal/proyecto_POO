@@ -15,6 +15,8 @@ private Producto producto;
         this.direccionEntrega = direccionEntrega;
         this.compra = compra;
         this.producto = producto;
+        this.precioUnitario=producto.getPrecio();
+        this.subtotal=precioUnitario*cantidad;
     }
 
 
@@ -61,6 +63,4 @@ private Producto producto;
     public Compra getCompra() {
         return compra;
     }
-
-
 }

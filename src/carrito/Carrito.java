@@ -3,17 +3,17 @@ package carrito;
 import producto.Producto;
 import usuario.Cliente;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Carrito {
     private Long id;
-    private String fechaCreacion;
+    private LocalDate fechaCreacion=LocalDate.now();
     private Cliente cliente;
     private ArrayList<LineaCarrito> lineaCarritos = new ArrayList<>();
 
-    public Carrito(Long id, String fechaCreacion, Cliente cliente) {
+    public Carrito(Long id,Cliente cliente) {
         this.id = id;
-        this.fechaCreacion = fechaCreacion;
         this.cliente = cliente;
     }
 
@@ -25,11 +25,11 @@ public class Carrito {
         this.id = id;
     }
 
-    public String getFechaCreacion() {
+    public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(String fechaCreacion) {
+    public void setFechaCreacion(LocalDate fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
@@ -65,6 +65,8 @@ public class Carrito {
     public void eliminarLineaCarrito(LineaCarrito lineaCarrito) {
         lineaCarritos.remove(lineaCarrito);
         lineaCarrito=null;
-        lineaCarrito.setCarrito(null);
+    }
+    public void vaciarCarrito() {
+        lineaCarritos.clear();
     }
 }

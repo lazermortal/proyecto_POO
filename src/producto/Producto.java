@@ -115,6 +115,7 @@ public class Producto {
                     return;
                 }
             }
+            desarrolladorProductos.add(desarrollador);
     }
 
     public void removerDesarrollador(DesarrolladorProducto desarrollador) {
