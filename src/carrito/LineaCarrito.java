@@ -51,9 +51,9 @@ public class LineaCarrito {
     public void aumentarProducto(Producto producto,int cantidad) {
         if(this.producto == null) {
             this.producto = producto;
-        }else if(this.producto==producto) {
+        }else if(this.producto.equals(producto)) {
             this.cantidad+=cantidad;
-        }{
+        }else {
             System.out.println("ya hay un producto diferente al que se intenta agregar");
         }
     }

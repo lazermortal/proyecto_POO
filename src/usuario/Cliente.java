@@ -62,18 +62,19 @@ public class Cliente extends Usuario {
         this.direccion = direccion;
         this.telefono = telefono;
     }
-    public Producto buscarProducto(String nombre) {
+    public void buscarProducto(String nombre) {
         for(int i=0;i<carritos.size();i++){
             for(int j=0;j<carritos.get(i).getLineaCarritos().size();j++){
-                if(carritos.get(i).getLineaCarritos().get(j).getProductos().getNombre().toLowerCase().equals(nombre)){
-                    return carritos.get(i).getLineaCarritos().get(j).getProductos();
+                if(carritos.get(i).getLineaCarritos().get(j).getProductos().getNombre().equalsIgnoreCase(nombre)){
+                    System.out.println(nombre + " esta en el carrito del cliente");
+                    return;
                 }
             }
         }
-        return null;
+        System.out.println("el producto "+nombre+" no esta en el carrito del cliente");
     }
-    public void añadirNuevoProductoCarrito(Producto producto, int cantidad, String direccionEntrega,Compra compra) {
-        compra.crearLineaCompra(producto,cantidad,direccionEntrega,compra);
+    public void añadirNuevoProductoCarrito(Producto producto, int cantidad, String direccionEntrega,Carrito carrito) {
+        carrito.agregarProductoCarrito(producto,cantidad);
     }
     public void crearCompra(String id, String fecha, Cliente cliente){
         Compra compra = new Compra(id,fecha);
@@ -90,14 +91,15 @@ public class Cliente extends Usuario {
         compras.remove(compra);
     }
 
-
-    public void agregarProductoCarrito(Carrito carrito, LineaCarrito lineaCarrito, Producto producto, int cantidad) {
-        carrito.agregarProductoCarrito(lineaCarrito,producto,cantidad);
-    }
     public void aumentarCantidadProducto(Carrito carrito,LineaCarrito lineaCarrito,Producto producto, int cantidad) {
         carrito.aumentarCantidadProducto(lineaCarrito,producto,cantidad);
     }
     public void eliminarProductoCarrito(Carrito carrito, LineaCarrito lineaCarrito) {
     carrito.eliminarLineaCarrito(lineaCarrito);
+    }
+    public Carrito crearCarrito(long id, String fechaCreacion){
+        Carrito carrito = new Carrito(id,fechaCreacion,this);
+        carritos.add(carrito);
+        return carrito;
     }
 }

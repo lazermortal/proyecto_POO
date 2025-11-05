@@ -29,20 +29,22 @@ public class DesarrolladorProducto extends Usuario {
         this.productos = productos;
     }
 
-    public void crearProducto(Long id, String nombre, String descripcion, int precio, int stock, String fechaLanzamiento) {
+    public Producto crearProducto(Long id, String nombre, String descripcion, int precio, int stock, String fechaLanzamiento) {
         Producto nuevoProducto = new Producto( id,  nombre,  descripcion,  precio,  stock, fechaLanzamiento);
 
         this.agregarProducto(nuevoProducto);
         nuevoProducto.agregarDesarrollador(this);
+        return nuevoProducto;
     }
 
   public void agregarProducto(Producto producto) {
-        if (!this.productos.contains(producto)) {
-            productos.add(producto);
-        }else{
-          System.out.println("este desarrollador ya creo ese producto");
-      }
-
+        for(int i=0;i<productos.size();i++) {
+            if (this.productos.get(i).getNombre().equals(producto.getNombre())) {
+                System.out.println(producto.getNombre() + " ya fue creado por este desarrollador");
+                return;
+            }
+        }
+      productos.add(producto);
   }
   public void removerProducto(Producto producto) {
         if (this.productos.contains(producto)) {
