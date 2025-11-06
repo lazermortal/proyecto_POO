@@ -1,0 +1,84 @@
+[33mcommit 5ca886a24f8f32638dcae91af613773117b096f1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mAndresito[m[33m, [m[1;31morigin/Andresito[m[33m)[m
+Author: Andres Baena <anjubama12@gmail.com>
+Date:   Wed Nov 5 23:08:31 2025 -0500
+
+    Login
+
+[33mcommit 265e0ec584209450c3ab6fa896d752b96b91d2ab[m
+Author: Andres Baena <anjubama12@gmail.com>
+Date:   Wed Nov 5 21:59:51 2025 -0500
+
+    Primera version menu
+
+[33mcommit 5ee85cb7a16ea6929d0423f38bb0ed925e46401f[m
+Author: Andres Baena <anjubama12@gmail.com>
+Date:   Wed Nov 5 21:59:05 2025 -0500
+
+    Prinicipio menú
+
+[33mcommit 52a8b78cf2a3ca38f6fba9943f1f0289514ebad4[m
+Merge: fda1263 585736f
+Author: Andres Baena <anjubama12@gmail.com>
+Date:   Tue Nov 4 22:35:03 2025 -0500
+
+    ultimo cambio antes de descargar
+
+[33mcommit 585736fcb255c92df16dd10dc19d6321e4b328f4[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Tue Nov 4 22:11:02 2025 -0500
+
+    metodos para pasar de carrito a compras, para crear metodos de pago, entre otros
+
+[33mcommit fda1263a78391436c6aeec0702392411651a8fda[m
+Author: Andres Baena <anjubama12@gmail.com>
+Date:   Tue Nov 4 21:52:23 2025 -0500
+
+    Clases hechas
+
+[33mcommit d1209e86842b81cb2053d1ac5189866a77ee07fa[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Tue Nov 4 20:29:53 2025 -0500
+
+    agregacion y arreglo de metodos como: crear carrito, agregar nuevo producto entre otros
+
+[33mcommit 515945b4c0c01d5a13b014ed364a9bdcf443f70b[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Tue Nov 4 11:35:54 2025 -0500
+
+    avance
+
+[33mcommit 9eb4d0dc3aef290262f963ab3f4921eeb640f76b[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Mon Nov 3 23:37:12 2025 -0500
+
+    metodos iniciales
+
+[33mcommit f9f52915bf3f778d268545d9409e0237aff265a7[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Mon Nov 3 20:27:01 2025 -0500
+
+    llenar las clases
+
+[33mcommit 4c0785559c7c40e7136daaaeebcd9178086e3179[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Sun Nov 2 20:23:42 2025 -0500
+
+    base de los productos, carrito, compra, etc
+
+[33mcommit a9c07d32c6e67d56190c0bd800da174cbfdd83c5[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Sun Oct 12 19:18:19 2025 -0500
+
+    segundo cambio
+
+[33mcommit 7e4969bbf9dbc016802e7b4c3f3d78f209f120c9[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Thu Oct 9 12:55:51 2025 -0500
+
+    update 0
+
+[33mcommit 51d64dcf48ed862139a327652ff6c3adcf9af4ed[m
+Author: lazermortal <juanjoseflorezlopez@gmail.com>
+Date:   Thu Oct 9 12:51:59 2025 -0500
+
+    main

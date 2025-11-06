@@ -42,7 +42,7 @@ public class Main {
                 }
             }
         }if(password.equals("SalpiconApanado")){
-            for(AdministradorContenido p : administradoresContenidos{
+            for(AdministradorContenido p : administradoresContenidos){
                 if(p.getNombre().equals(nombre)){
                     menuAdministradorContenido();
                 }
