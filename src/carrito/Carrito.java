@@ -7,21 +7,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Carrito {
-    private Long id;
+    private int id = 0;
     private LocalDate fechaCreacion=LocalDate.now();
     private Cliente cliente;
     private ArrayList<LineaCarrito> lineaCarritos = new ArrayList<>();
 
-    public Carrito(Long id,Cliente cliente) {
-        this.id = id;
+    public Carrito(Cliente cliente) {
+        id = id++;
         this.cliente = cliente;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

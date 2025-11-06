@@ -4,10 +4,53 @@ import producto.DesarrolladorProducto;
 import producto.Producto;
 import usuario.Cliente;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        //Listas
+        List<Producto> inventario = new ArrayList<>();
+        List<Carrito> carritos = new ArrayList<>()
+
+        boolean indicador = false;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Bienvenido");
+        while(!indicador) {
+            //Menu del cliente
+            System.out.println("-----------------Menú----------------- \n 1. Comprar producto \n 2. Ver Carrito \n 3. Salir \n -------------------------------");
+            String opcion = sc.nextLine();
+            switch (opcion) {
+                case "1":
+                    for(Producto p: inventario) {
+                        p.mostrarProductos();
+                    }
+                    System.out.println("Desea comprar algun producto?");
+                    String re =  sc.nextLine();
+                    if(re.equalsIgnoreCase("Si") {
+                        System.out.println("Ingrese su nombre");
+                        String nombre = sc.nextLine();
+                        Carrito c1 = new Carrito( );
+                        boolean indicador2 = false;
+                        while (!indicador2) {
+                            System.out.println("Elige un producto por su id para añadirlo al carrito");
+                            int seleccion = Integer.parseInt(sc.nextLine());
+
+                            for (Producto p : inventario) {
+                                if (p.getId() == seleccion) {
+
+                                }
+                            }
+                        }
+                    }else{
+                        break;
+                    }
+                    break;
+                case "2":
+                    break;
+            }
+        }
 
         Cliente pablo = new Cliente(1234L,"juan","causa","eamil.com","19/08/2000","jijijjaja","calle 9",1233432323);
         System.out.println("Pablo: " + pablo.getNombre());

@@ -4,6 +4,7 @@ import carrito.LineaCarrito;
 import compra.LineaCompra;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Producto {
     private Long id;
@@ -25,6 +26,11 @@ public class Producto {
         this.stock = stock;
         this.fechaLanzamiento = fechaLanzamiento;
 
+    }
+    public void mostrarProductos(){
+        if (stock != 0) {
+            System.out.println("Id " + id + ", Nombre: " +  this.nombre + ", Descripcion: " + descripcion + " Precio: $" + precio + " Categoria: " + categoria);
+        }
     }
 
     public Long getId() {
