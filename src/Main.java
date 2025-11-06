@@ -72,8 +72,8 @@ public class Main {
         Cliente c1 = new Cliente(12L,"juan","cliente","eia","agosto","activa");
 
         Carrito carrito1=c1.crearCarrito(12L);
-        c1.añadirNuevoProductoCarrito(nuevoProducto,5,"calle 7",carrito1);
-        c1.añadirNuevoProductoCarrito(novoProducto,2,"calle 7",carrito1);
+        c1.añadirNuevoProductoCarrito(nuevoProducto,5,carrito1);
+        c1.añadirNuevoProductoCarrito(novoProducto,2,carrito1);
         System.out.println(carrito1.getFechaCreacion());
 
 

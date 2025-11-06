@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Compra {
-    private String id;
+    private Long id;
     private String fecha;
     private int total;
     private estadoCompra estado;
@@ -17,18 +17,18 @@ public class Compra {
     private ArrayList<LineaCompra> lineaCompras = new  ArrayList<>();
 
 
-    public Compra(String id,Cliente cliente) {
+    public Compra(Long id,Cliente cliente) {
         this.id = id;
         this.fecha = LocalDate.now().toString();
         this.estado = estadoCompra.PENDIENTE;
         this.cliente = cliente;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
