@@ -3,6 +3,9 @@ import compra.Compra;
 import producto.DesarrolladorProducto;
 import producto.Producto;
 import usuario.Cliente;
+import usuario.consejoSombrio.AdministradorContenido;
+import usuario.consejoSombrio.AdministradorUsuario;
+import usuario.duena.Duena;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,44 +15,42 @@ public class Main {
     public static void main(String[] args) {
         //Listas
         List<Producto> inventario = new ArrayList<>();
-        List<Carrito> carritos = new ArrayList<>()
+        List<Carrito> carritos = new ArrayList<>();
+        List<AdministradorUsuario> administradoresUsuario = new ArrayList<>();
+        List<AdministradorContenido> administradoresContenidos = new ArrayList<>();
+        List<DesarrolladorProducto> desarrolladoresProductos = new ArrayList<>();
 
-        boolean indicador = false;
+        Duena cabrita = new Duena(1L, "Sakura", "Dueña" , "LaCabraLoca@eia.edu.co", "27/02/2025" , "Activo" , "LaCabritaMamalona" , "28/09/2025");
+
+        //Login
         Scanner sc = new Scanner(System.in);
-        System.out.println("Bienvenido");
-        while(!indicador) {
-            //Menu del cliente
-            System.out.println("-----------------Menú----------------- \n 1. Comprar producto \n 2. Ver Carrito \n 3. Salir \n -------------------------------");
-            String opcion = sc.nextLine();
-            switch (opcion) {
-                case "1":
-                    for(Producto p: inventario) {
-                        p.mostrarProductos();
-                    }
-                    System.out.println("Desea comprar algun producto?");
-                    String re =  sc.nextLine();
-                    if(re.equalsIgnoreCase("Si") {
-                        System.out.println("Ingrese su nombre");
-                        String nombre = sc.nextLine();
-                        Carrito c1 = new Carrito( );
-                        boolean indicador2 = false;
-                        while (!indicador2) {
-                            System.out.println("Elige un producto por su id para añadirlo al carrito");
-                            int seleccion = Integer.parseInt(sc.nextLine());
+        System.out.println("----------Login----------- \n Ingrese el nombre de usuario");
+        String nombre = sc.nextLine();
+        System.out.println("Ingrese la contraseña");
+        String password = sc.nextLine();
 
-                            for (Producto p : inventario) {
-                                if (p.getId() == seleccion) {
-
-                                }
-                            }
-                        }
-                    }else{
-                        break;
-                    }
-                    break;
-                case "2":
-                    break;
+        if(password.equals("AguapanelaConQueso123")){
+            for(DesarrolladorProducto p : desarrolladoresProductos){
+                if(p.getNombre().equals(nombre)){
+                    menuDesarrollador();
+                }
             }
+        }if(password.equals("PandequesoRicolino")){
+            for(AdministradorUsuario p : administradoresUsuario){
+                if(p.getNombre().equals(nombre)){
+                    menuAdministradorUsuario();
+                }
+            }
+        }if(password.equals("SalpiconApanado")){
+            for(AdministradorContenido p : administradoresContenidos{
+                if(p.getNombre().equals(nombre)){
+                    menuAdministradorContenido();
+                }
+            }
+        }if(password.equals(cabrita.getClaveMaestra())){
+            menuDuena();
+        }else{
+            menuCliente();
         }
 
         Cliente pablo = new Cliente(1234L,"juan","causa","eamil.com","19/08/2000","jijijjaja","calle 9",1233432323);

@@ -12,11 +12,10 @@ public class Duena extends Usuario {
         super(id, nombre, rol, email, fechaRegistro, estadoCuenta);
     }
 
-    public Duena(Long id, String nombre, String rol, String email, String fechaRegistro, String estadoCuenta, String claveMaestra, String fechaCoronacion, RegistroEsclavos registroEsclavos) {
+    public Duena(Long id, String nombre, String rol, String email, String fechaRegistro, String estadoCuenta, String claveMaestra, String fechaCoronacion) {
         super(id, nombre, rol, email, fechaRegistro, estadoCuenta);
         this.claveMaestra = claveMaestra;
         this.fechaCoronacion = fechaCoronacion;
-        this.registroEsclavos = registroEsclavos;
     }
 
     public void administrarRegistroEsclavos(){
